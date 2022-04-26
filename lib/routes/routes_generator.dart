@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_final_materia_dev_mobile/views/dashboard.dart';
 import 'package:projeto_final_materia_dev_mobile/views/login_page.dart';
 
 class RouteGenerator {
@@ -10,6 +11,12 @@ class RouteGenerator {
             builder: (_) => LoginPage(
                   data: args,
                   title: 'Login',
+                ));
+      case '/dashboard':
+        return MaterialPageRoute(
+            builder: (_) => Dashboard(
+                  data: args,
+                  title: 'Dashboard',
                 ));
       default:
         return _erroRoute();

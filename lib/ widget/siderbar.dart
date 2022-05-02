@@ -6,7 +6,7 @@ class SideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 750,
+      height: 650,
       child: Drawer(
         // borderRadius: BorderRadius.circular(16.0),
         child: ListView(
@@ -34,11 +34,11 @@ class SideBar extends StatelessWidget {
                         'https://oflutter.com/wp-content/uploads/2021/02/profile-bg3.jpg')),
               ),
             ),
-            ListTile(),
+            const ListTile(),
             ListTile(
               leading: const Icon(Icons.person),
               title: const Text('Usuários'),
-              onTap: () => null,
+              onTap: () => Navigator.of(context).pushNamed('/cadastroUsuarios'),
             ),
             ListTile(
               leading: const Icon(Icons.favorite),
@@ -51,18 +51,14 @@ class SideBar extends StatelessWidget {
               onTap: () => null,
             ),
             const Divider(),
-            ListTile(),
-            ListTile(),
-            ListTile(),
-            ListTile(),
-            ListTile(),
-            ListTile(),
+            const ListTile(),
+            const ListTile(),
             ListTile(
               title: const Center(
                 child: Text('Sair'),
               ),
               // leading: const Icon(Icons.exit_to_app),
-              onTap: () => null,
+              onTap: () => Navigator.of(context).pushNamed('/'),
             ),
           ],
         ),

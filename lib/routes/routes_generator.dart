@@ -18,6 +18,12 @@ class RouteGenerator {
                   data: args,
                   title: 'Dashboard',
                 ));
+      case '/cadastroUsuarios':
+        return MaterialPageRoute(
+            builder: (_) => Dashboard(
+                  data: args,
+                  title: 'Cadastro de Usuario',
+                ));
       default:
         return _erroRoute();
     }

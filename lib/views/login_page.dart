@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key, required this.title, Object? data})
@@ -15,6 +16,7 @@ class MyLoginPage extends State<LoginPage> {
   String email = "";
   String senha = "";
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +29,11 @@ class MyLoginPage extends State<LoginPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      //crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         const Text(
                           'Entrar',
+                          //textAlign: TextAlign.center,
                           style: TextStyle(
                             //height: 5,
                             fontSize: 40,
@@ -45,7 +49,7 @@ class MyLoginPage extends State<LoginPage> {
 
                         const Text(
                           'E-mail',
-                          textAlign: TextAlign.left,
+                          //textAlign: TextAlign.left,
                           style: TextStyle(
                             height: 5,
                             fontSize: 16,
@@ -69,9 +73,11 @@ class MyLoginPage extends State<LoginPage> {
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10.0)),
                               borderSide: BorderSide.none,
                               //shadowColor: Colors.grey,
-                              //borderRadius: BorderRadius.circular (50)
+                              //borderRadius: BorderRadius.circular (50),
                             ),
                           ),
                         ),
@@ -82,7 +88,7 @@ class MyLoginPage extends State<LoginPage> {
 
                         const Text(
                           'Senha',
-                          textAlign: TextAlign.left,
+                          //textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
@@ -103,11 +109,13 @@ class MyLoginPage extends State<LoginPage> {
                             //mudar a cor do campo, e alterar as bordas
                             filled: true,
                             fillColor: Colors.white,
-                            border:
-                                OutlineInputBorder(borderSide: BorderSide.none
-                                    //shadowColor: Colors.grey,
-                                    //borderRadius: BorderRadius.circular (50)
-                                    ),
+                            border: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10.0)),
+                                borderSide: BorderSide.none
+                                //shadowColor: Colors.grey,
+                                //borderRadius: BorderRadius.circular (50)
+                                ),
                           ),
                         ),
 
@@ -130,6 +138,7 @@ class MyLoginPage extends State<LoginPage> {
                             style: ElevatedButton.styleFrom(
                               primary: Colors.white,
                               elevation: 20,
+                              shadowColor: Color.fromARGB(255, 250, 251, 250),
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       BorderRadius.circular(10.0)), // Elevation
@@ -149,7 +158,7 @@ class MyLoginPage extends State<LoginPage> {
 
                         const Text(
                           'Ou',
-                          textAlign: TextAlign.left,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
@@ -162,19 +171,21 @@ class MyLoginPage extends State<LoginPage> {
                           height: 22,
                         ),
 
-                        const Text(
-                          'Cadastre-se',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.normal,
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                          ),
-                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: const Text('Cadastre-se',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.normal,
+                                  color: Color.fromRGBO(255, 255, 255, 1),
+                                ))),
                       ],
                     )))
 
             //const Text('Tela de login'),
             ));
   }
+
+
+ 
 }

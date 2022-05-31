@@ -16,10 +16,16 @@ class CadastroDeUsuarios extends StatefulWidget {
 class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
   @override
   Widget build(BuildContext context) {
+    final ThemeData tema = ThemeData();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cadastro de Usuarios"),
-      ),
-    );
+        centerTitle: true,
+        title: const Text("Cadastro",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize:20)),
+        backgroundColor: Color.fromRGBO(0, 31, 84, 1),
+      ), 
+      body: Center(
+      ),     
+      );
   }
 }

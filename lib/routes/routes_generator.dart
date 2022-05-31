@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:projeto_final_materia_dev_mobile/views/dashboard.dart';
 import 'package:projeto_final_materia_dev_mobile/views/login_page.dart';
 
+import '../views/cadastrar_usuarios.dart';
+import '../views/login_page_test.dart';
+
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
-            builder: (_) => LoginPage(
+            builder: (_) => LoginPageTest(
                   data: args,
                   title: 'Login',
                 ));
@@ -20,7 +23,7 @@ class RouteGenerator {
                 ));
       case '/cadastroUsuarios':
         return MaterialPageRoute(
-            builder: (_) => Dashboard(
+            builder: (_) => CadastroDeUsuarios(
                   data: args,
                   title: 'Cadastro de Usuario',
                 ));

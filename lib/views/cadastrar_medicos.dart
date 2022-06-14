@@ -1,24 +1,24 @@
 //import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projeto_final_materia_dev_mobile/models/user.dart';
+import 'package:projeto_final_materia_dev_mobile/models/doctor.dart';
 import 'package:projeto_final_materia_dev_mobile/views/widget/button.dart';
 import 'package:projeto_final_materia_dev_mobile/views/widget/dropdown_cadastro.dart';
 import 'package:projeto_final_materia_dev_mobile/views/widget/form_cadastro.dart';
 
 //import '../ widget/siderbar.dart';
 
-class CadastroDeUsuarios extends StatefulWidget {
-  const CadastroDeUsuarios({Key? key, required this.title, Object? data})
+class CadastroDeMedicos extends StatefulWidget {
+  const CadastroDeMedicos({Key? key, required this.title, Object? data})
       : super(key: key);
 
   final String title;
 
   @override
-  State<CadastroDeUsuarios> createState() => MyCadastroDeUsuarios();
+  State<CadastroDeMedicos> createState() => MyCadastroDeMedicos();
 }
 
-class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
+class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
   final dropValue = ValueNotifier('');
   final dropOpc = ['Feminino', 'Masculino'];
   final TextEditingController _controllerNome = new TextEditingController();
@@ -26,6 +26,11 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
   final TextEditingController _controllerCPF = TextEditingController();
   final TextEditingController _controllerSenha = TextEditingController();
   final TextEditingController _controllerSexo = TextEditingController();
+  final TextEditingController _controllerEspecialidade =
+      TextEditingController();
+  final TextEditingController _controllerCRM = TextEditingController();
+  final TextEditingController _controllerRQE = TextEditingController();
+  final TextEditingController _controllerCRO = TextEditingController();
   final TextEditingController _controllerEndereco = TextEditingController();
   final TextEditingController _controllerNumero = TextEditingController();
   final TextEditingController _controllerBairro = TextEditingController();
@@ -38,22 +43,19 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
     String email;
     String senha;
     bool _isObscure = true;
-
+    //final ThemeData tema = ThemeData();
     return Scaffold(
       appBar: AppBar(
-          //toolbarHeight: 80,
           centerTitle: true,
           title: Text(
-            "Cadastro \nUsuários",
+            "Cadastro \nMédicos",
             style: GoogleFonts.inter(
                 textStyle: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
-              /*Espaçamento entre linhas*/
               letterSpacing: .5,
             )),
           ),
-          /*Alterando a cor do AppBar para Gradiente*/
           flexibleSpace: Container(
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
@@ -63,7 +65,6 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                 Color.fromRGBO(0, 31, 84, 1),
                 Color.fromRGBO(19, 86, 202, 1),
               ])))),
-
       /*Formulário Cadastro*/
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20.0),
@@ -160,10 +161,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                                   color: Color.fromRGBO(112, 145, 221, 1)),
                               suffixIcon: IconButton(
                                   icon: Icon(
-                                    _isObscure =
+                                    _isObscure
                                         ? Icons.visibility
                                         : Icons.visibility_off,
-                                    color: const Color.fromRGBO(112, 145, 221, 1),
+                                    color: Color.fromRGBO(112, 145, 221, 1),
                                   ),
                                   onPressed: () {
                                     setState(() {
@@ -276,6 +277,105 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                               );
                             }),
                         const SizedBox(height: 10),
+                        Text('Especialidade',
+                            style: GoogleFonts.inter(
+                                textStyle: const TextStyle(
+                                    color: Color.fromRGBO(0, 31, 84, 1),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18))),
+                        TextFormField(
+                          controller: _controllerEspecialidade,
+                          keyboardType: TextInputType.text,
+                          autofocus: true,
+                          cursorColor: Colors.black,
+                          style: GoogleFonts.inter(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                          decoration: InputDecoration(
+                            /*prefixIcon: Icon(Icons.,
+                                color: Color.fromRGBO(112, 145, 221, 1)),*/
+                            filled: true,
+                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10)),
+                            hintText: ('Informe a sua especialidade*'),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text('CRM',
+                            style: GoogleFonts.inter(
+                                textStyle: const TextStyle(
+                                    color: Color.fromRGBO(0, 31, 84, 1),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18))),
+                        TextFormField(
+                          controller: _controllerCRM,
+                          keyboardType: TextInputType.text,
+                          autofocus: true,
+                          cursorColor: Colors.black,
+                          style: GoogleFonts.inter(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.numbers,
+                                color: Color.fromRGBO(112, 145, 221, 1)),
+                            filled: true,
+                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10)),
+                            hintText: ('Informe o CRM'),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text('RQE',
+                            style: GoogleFonts.inter(
+                                textStyle: const TextStyle(
+                                    color: Color.fromRGBO(0, 31, 84, 1),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18))),
+                        TextFormField(
+                          controller: _controllerRQE,
+                          keyboardType: TextInputType.text,
+                          autofocus: true,
+                          cursorColor: Colors.black,
+                          style: GoogleFonts.inter(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.numbers,
+                                color: Color.fromRGBO(112, 145, 221, 1)),
+                            filled: true,
+                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10)),
+                            hintText: ('Informe o RQE'),
+                          ),
+                        ),const SizedBox(height: 10),
+                        Text('CRO',
+                            style: GoogleFonts.inter(
+                                textStyle: const TextStyle(
+                                    color: Color.fromRGBO(0, 31, 84, 1),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18))),
+                        TextFormField(
+                          controller: _controllerCRO,
+                          keyboardType: TextInputType.text,
+                          autofocus: true,
+                          cursorColor: Colors.black,
+                          style: GoogleFonts.inter(
+                              fontSize: 18, fontWeight: FontWeight.w400),
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(Icons.numbers,
+                                color: Color.fromRGBO(112, 145, 221, 1)),
+                            filled: true,
+                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10)),
+                            hintText: ('Informe o CRO'),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
                         Text('Endereço',
                             style: GoogleFonts.inter(
                                 textStyle: const TextStyle(
@@ -379,16 +479,37 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                         Button(
                           onPressed: () {
                             final String nome = _controllerNome.text;
-                            final String emaiL =_controllerEmail.text;
+                            final String emaiL = _controllerEmail.text;
                             final String senha = _controllerSenha.text;
-                            final double? cpf = double.tryParse(_controllerCPF.text);
+                            final double? cpf =
+                                double.tryParse(_controllerCPF.text);
                             final String sexo = _controllerSexo.text;
+                            final String especialidade =
+                                _controllerEspecialidade.text;
+                            final int? crm = int.tryParse(_controllerCRM.text);
+                            final int? rqe = int.tryParse(_controllerRQE.text);
+                            final int? cro = int.tryParse(_controllerCRO.text);
                             final String endereco = _controllerEndereco.text;
-                            final int? numero = int.tryParse(_controllerNumero.text);
+                            final int? numero =
+                                int.tryParse(_controllerNumero.text);
                             final String bairro = _controllerBairro.text;
-                            final int? celular = int.tryParse(_controllerCelular.text);
+                            final int? celular =
+                                int.tryParse(_controllerCelular.text);
 
-                            final User usuarioNovo = User(nome, emaiL, senha, cpf, sexo, endereco, numero, bairro, celular);
+                            final Doctor usuarioNovo = Doctor(
+                                nome,
+                                emaiL,
+                                senha,
+                                cpf,
+                                sexo,
+                                especialidade,
+                                crm,
+                                rqe,
+                                cro,
+                                endereco,
+                                numero,
+                                bairro,
+                                celular);
                             print(usuarioNovo);
                           },
                           text: 'Cadastrar',

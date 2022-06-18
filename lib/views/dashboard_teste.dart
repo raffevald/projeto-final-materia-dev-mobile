@@ -254,7 +254,7 @@ class _DashboardState extends State<Dashboard> {
       InkWell(
         child: Container(
           // padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
-          padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
+          padding: padding.add(const EdgeInsets.symmetric(horizontal: 2)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -275,10 +275,10 @@ class _DashboardState extends State<Dashboard> {
                   child: Row(
                     children: [
                       CircleAvatar(
-                        radius: 35,
+                        radius: 40,
                         backgroundImage: NetworkImage(urlImage),
                       ),
-                      const SizedBox(width: 100),
+                      const SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

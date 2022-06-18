@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projeto_final_materia_dev_mobile/views/cadastrar_medicos.dart';
 
 import '../ widget/siderbar.dart';
+import '../models/doctor.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -29,7 +31,23 @@ class _DashboardState extends State<Dashboard> {
   //Laitu
   final padding = const EdgeInsets.symmetric(horizontal: 20);
 
-  String name = "";
+  // String name = "";
+
+  // final List<Map<String, dynamic>> _allUsers = Doctor({
+  //   nome,
+  //   email,
+  //   senha,
+  //   "cpf" : cpf,
+  //   sexo,
+  //   especialidade,
+  //   crm,
+  //   rqe,
+  //   cro,
+  //   endereco,
+  //   numero,
+  //   bairro,
+  //   celular
+  // });
 
   final List<Map<String, dynamic>> _allUsers = [
     {
@@ -73,6 +91,19 @@ class _DashboardState extends State<Dashboard> {
     },
     {
       "cpf": "33344477733",
+      "dateTIme": "Sexta 15 de agosto",
+      "urlImage": "./algumdiretorio/imagem.png",
+      "name": "Dr. Aquison",
+      "email": "aquison@gmail.com",
+      "especialidade": "Ortopedia",
+      "crmOrRqeOrRro": "234654",
+      "rua": "Rio Branco",
+      "numero": "1378",
+      "cidade": "Ji-Paraná",
+      "bairro": "Centro"
+    },
+    {
+      "cpf": "32423654678678",
       "dateTIme": "Sexta 15 de agosto",
       "urlImage": "./algumdiretorio/imagem.png",
       "name": "Dr. Aquison",

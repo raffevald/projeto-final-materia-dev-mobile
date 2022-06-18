@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // initialRoute: '/',
+      //initialRoute: '/',
       initialRoute: '/dashboard',
       // initialRoute: '/searchMed',
       onGenerateRoute: RouteGenerator.generateRoute,

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_final_materia_dev_mobile/models/doctor.dart';
 import 'package:projeto_final_materia_dev_mobile/views/widget/button.dart';
-import 'package:projeto_final_materia_dev_mobile/views/widget/dropdown_cadastro.dart';
-import 'package:projeto_final_materia_dev_mobile/views/widget/form_cadastro.dart';
+// import 'package:projeto_final_materia_dev_mobile/views/widget/dropdown_cadastro.dart';
+// import 'package:projeto_final_materia_dev_mobile/views/widget/form_cadastro.dart';
 
 //import '../ widget/siderbar.dart';
 
@@ -46,28 +46,32 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
     //final ThemeData tema = ThemeData();
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "Cadastro \nMédicos",
-            style: GoogleFonts.inter(
-                textStyle: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-              letterSpacing: .5,
-            )),
-          ),
-          flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: <Color>[
+        centerTitle: true,
+        title: Text(
+          "Cadastro \nMédicos",
+          style: GoogleFonts.inter(
+              textStyle: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            letterSpacing: .5,
+          )),
+        ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: <Color>[
                 Color.fromRGBO(0, 31, 84, 1),
                 Color.fromRGBO(19, 86, 202, 1),
-              ])))),
+              ],
+            ),
+          ),
+        ),
+      ),
       /*Formulário Cadastro*/
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +131,7 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -152,7 +156,7 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                             obscureText: _isObscure,
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: Color.fromRGBO(211, 233, 254, 1),
+                              fillColor: const Color.fromRGBO(211, 233, 254, 1),
                               hintText: ('Digite uma senha*'),
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
@@ -163,8 +167,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                                   icon: Icon(
                                     _isObscure
                                         ? Icons.visibility
+                                        // ignore: dead_code
                                         : Icons.visibility_off,
-                                    color: Color.fromRGBO(112, 145, 221, 1),
+                                    color:
+                                        const Color.fromRGBO(112, 145, 221, 1),
                                   ),
                                   onPressed: () {
                                     setState(() {
@@ -205,10 +211,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person,
+                            prefixIcon: const Icon(Icons.person,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -230,10 +236,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person,
+                            prefixIcon: const Icon(Icons.person,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -260,7 +266,8 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                                       fontWeight: FontWeight.w400),
                                   decoration: InputDecoration(
                                     filled: true,
-                                    fillColor: Color.fromRGBO(211, 233, 254, 1),
+                                    fillColor:
+                                        const Color.fromRGBO(211, 233, 254, 1),
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide.none,
                                         borderRadius:
@@ -294,7 +301,7 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                             /*prefixIcon: Icon(Icons.,
                                 color: Color.fromRGBO(112, 145, 221, 1)),*/
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -316,10 +323,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.numbers,
+                            prefixIcon: const Icon(Icons.numbers,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -341,16 +348,17 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.numbers,
+                            prefixIcon: const Icon(Icons.numbers,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
                             hintText: ('Informe o RQE'),
                           ),
-                        ),const SizedBox(height: 10),
+                        ),
+                        const SizedBox(height: 10),
                         Text('CRO',
                             style: GoogleFonts.inter(
                                 textStyle: const TextStyle(
@@ -365,10 +373,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.numbers,
+                            prefixIcon: const Icon(Icons.numbers,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -390,10 +398,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.place_rounded,
+                            prefixIcon: const Icon(Icons.place_rounded,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -415,10 +423,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.place_rounded,
+                            prefixIcon: const Icon(Icons.place_rounded,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -440,10 +448,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.place_rounded,
+                            prefixIcon: const Icon(Icons.place_rounded,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -465,10 +473,10 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.phone,
+                            prefixIcon: const Icon(Icons.phone,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),

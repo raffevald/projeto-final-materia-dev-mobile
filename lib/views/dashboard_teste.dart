@@ -58,6 +58,32 @@ class _DashboardState extends State<Dashboard> {
       "cidade": "Mirante da Serra",
       "bairro": "Centro"
     },
+    {
+      "cpf": "33344477733",
+      "dateTIme": "Sexta 15 de agosto",
+      "urlImage": "./algumdiretorio/imagem.png",
+      "name": "Dr. Eric Costa",
+      "email": "eric.costa@gmail.com",
+      "especialidade": "Clinica geral",
+      "crmOrRqeOrRro": "234654",
+      "rua": "Rio Branco",
+      "numero": "1378",
+      "cidade": "Nova União",
+      "bairro": "Centro"
+    },
+    {
+      "cpf": "33344477733",
+      "dateTIme": "Sexta 15 de agosto",
+      "urlImage": "./algumdiretorio/imagem.png",
+      "name": "Dr. Aquison",
+      "email": "aquison@gmail.com",
+      "especialidade": "Ortopedia",
+      "crmOrRqeOrRro": "234654",
+      "rua": "Rio Branco",
+      "numero": "1378",
+      "cidade": "Ji-Paraná",
+      "bairro": "Centro"
+    },
   ];
 
   List<Map<String, dynamic>> _foundUsers = [];
@@ -119,7 +145,7 @@ class _DashboardState extends State<Dashboard> {
       ),
       drawer: const SideBar(),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             const SizedBox(
@@ -150,7 +176,9 @@ class _DashboardState extends State<Dashboard> {
                         color: const Color.fromARGB(255, 242, 246, 252),
                         elevation: 4,
                         margin: const EdgeInsets.symmetric(vertical: 10),
+
                         child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
                             children: [
                               buildContextSearch(
@@ -184,7 +212,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     )
                   : const Text(
-                      'No results found',
+                      'Nem um resultado encontrado.',
                       style: TextStyle(fontSize: 24),
                     ),
             ),
@@ -193,12 +221,6 @@ class _DashboardState extends State<Dashboard> {
       ),
     );
   }
-
-  //   buildHeader(
-  //   urlImage: urlImage,
-  //   name: name,
-  //   email: email,
-  // ),
 
   Widget buildContextSearch({
     required String dateTime,
@@ -211,74 +233,179 @@ class _DashboardState extends State<Dashboard> {
     required String bairro,
   }) =>
       InkWell(
-        // onTap: onClicked,
-
         child: Container(
-          padding: padding.add(const EdgeInsets.symmetric(vertical: 40)),
-          child: Row(
+          padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(
+                dateTime,
+                style: GoogleFonts.inter(
+                  textStyle: const TextStyle(
+                    color: Color.fromARGB(255, 8, 8, 8),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 18,
+                  ),
+                ),
+              ),
               SizedBox(
                 child: Container(
-                  margin: padding.add(EdgeInsets.symmetric(vertical: 0)),
+                  padding:
+                      padding.add(const EdgeInsets.symmetric(vertical: 10)),
                   child: Row(
                     children: [
-                      Text(
-                        dateTime,
-                        style:
-                            const TextStyle(fontSize: 15, color: Colors.black),
+                      CircleAvatar(
+                        radius: 35,
+                        backgroundImage: NetworkImage(urlImage),
+                      ),
+                      const SizedBox(width: 100),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: GoogleFonts.inter(
+                              textStyle: const TextStyle(
+                                color: Color.fromARGB(255, 8, 8, 8),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            crmOrRqeOrRro,
+                            style: GoogleFonts.inter(
+                              textStyle: const TextStyle(
+                                color: Color.fromARGB(255, 8, 8, 8),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                Text(
+                                  rua,
+                                  style: const TextStyle(
+                                      fontSize: 12, color: Colors.black),
+                                ),
+                                Text(
+                                  numero,
+                                  style: GoogleFonts.inter(
+                                    textStyle: const TextStyle(
+                                      color: Color.fromARGB(255, 8, 8, 8),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                cidade,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                bairro,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
                       ),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
-                child: Row(
-                    // children: [
-                    //   CircleAvatar(
-                    //       radius: 27, backgroundImage: NetworkImage(urlImage)),
-                    //   const SizedBox(width: 20),
-                    //   Column(
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //       Text(
-                    //         name,
-                    //         style: const TextStyle(
-                    //             fontSize: 15, color: Colors.black),
-                    //       ),
-                    //       const SizedBox(height: 4),
-                    //       Text(
-                    //         crmOrRqeOrRro,
-                    //         style: const TextStyle(
-                    //             fontSize: 11, color: Colors.black),
-                    //       ),
-                    //       Text(
-                    //         rua,
-                    //         style: const TextStyle(
-                    //             fontSize: 11, color: Colors.black),
-                    //       ),
-                    //       Text(
-                    //         numero,
-                    //         style: const TextStyle(
-                    //             fontSize: 11, color: Colors.black),
-                    //       ),
-                    //       Text(
-                    //         cidade,
-                    //         style: const TextStyle(
-                    //             fontSize: 11, color: Colors.black),
-                    //       ),
-                    //       Text(
-                    //         bairro,
-                    //         style: const TextStyle(
-                    //             fontSize: 11, color: Colors.black),
-                    //       )
-                    //     ],
-                    //   ),
-                    // ],
-                    ),
-              ),
-              const Spacer(),
             ],
           ),
         ),
       );
+
+  // Widget buildContextSearch({
+  //   required String dateTime,
+  //   required String urlImage,
+  //   required String name,
+  //   required String crmOrRqeOrRro,
+  //   required String rua,
+  //   required String numero,
+  //   required String cidade,
+  //   required String bairro,
+  // }) =>
+  //     InkWell(
+  //       child: Container(
+  //         padding: padding.add(const EdgeInsets.symmetric(vertical: 40)),
+  //         child: Row(
+  //           children: [
+  //             Text(
+  //               dateTime,
+  //               style: const TextStyle(fontSize: 15, color: Colors.black),
+  //             ),
+  //             SizedBox(
+  //               child: Row(
+  //                 children: [
+  //                   CircleAvatar(
+  //                       radius: 27, backgroundImage: NetworkImage(urlImage)),
+  //                   const SizedBox(width: 20),
+  //                   Column(
+  //                     crossAxisAlignment: CrossAxisAlignment.start,
+  //                     children: [
+  //                       Text(
+  //                         name,
+  //                         style: const TextStyle(
+  //                             fontSize: 15, color: Colors.black),
+  //                       ),
+  //                       const SizedBox(height: 4),
+  //                       Text(
+  //                         crmOrRqeOrRro,
+  //                         style: const TextStyle(
+  //                             fontSize: 11, color: Colors.black),
+  //                       ),
+  //                       Text(
+  //                         rua,
+  //                         style: const TextStyle(
+  //                             fontSize: 11, color: Colors.black),
+  //                       ),
+  //                       Text(
+  //                         numero,
+  //                         style: const TextStyle(
+  //                             fontSize: 11, color: Colors.black),
+  //                       ),
+  //                       Text(
+  //                         cidade,
+  //                         style: const TextStyle(
+  //                             fontSize: 11, color: Colors.black),
+  //                       ),
+  //                       Text(
+  //                         bairro,
+  //                         style: const TextStyle(
+  //                             fontSize: 11, color: Colors.black),
+  //                       )
+  //                     ],
+  //                   ),
+  //                 ],
+  //               ),
+  //             ),
+  //             const Spacer(),
+  //           ],
+  //         ),
+  //       ),
+  //     );
 }

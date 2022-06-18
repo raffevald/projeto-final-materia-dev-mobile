@@ -12,11 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //title: 'Login',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       // initialRoute: '/',
       initialRoute: '/dashboard',
+      // initialRoute: '/searchMed',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

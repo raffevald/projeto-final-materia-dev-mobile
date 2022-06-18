@@ -11,53 +11,64 @@ class SideBar extends StatelessWidget {
     const email = 'joaofg@gmail.com';
     const urlImage = '../assets/DSC_3965.JPG';
 
-    return SizedBox(
-      height: 650,
-      child: Drawer(
-        child: Container(
-          decoration: BoxDecoration(
-            border: Border.all(),
-            color: Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(40)),
-          ),
-          child: ListView(
-            // Remove padding
-            padding: EdgeInsets.zero,
-            children: [
-              buildHeader(
-                urlImage: urlImage,
-                name: name,
-                email: email,
-              ),
-              const ListTile(),
-              ListTile(
-                leading: const Icon(Icons.person),
-                title: const Text('Usuários'),
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/cadastroUsuarios'),
-              ),
-              ListTile(
-                leading: const Icon(Icons.favorite),
-                title: const Text('Favoritos'),
-                onTap: () => null,
-              ),
-              ListTile(
-                leading: const Icon(Icons.description),
-                title: const Text('Consultas'),
-                onTap: () => null,
-              ),
-              const Divider(),
-              const ListTile(),
-              const ListTile(),
-              ListTile(
-                title: const Center(
-                  child: Text('Sair'),
+    return SingleChildScrollView(
+      child: Stack(
+        children: <Widget>[
+          const SizedBox(height: 80),
+          Container(
+            color: Colors.transparent,
+            child: SizedBox(
+              height: 650,
+              child: Drawer(
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(255, 192, 202, 225),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(40.0),
+                      bottomRight: Radius.circular(40.0),
+                    ),
+                  ),
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: [
+                      buildHeader(
+                        urlImage: urlImage,
+                        name: name,
+                        email: email,
+                      ),
+                      const Divider(),
+                      ListTile(
+                        leading: const Icon(Icons.person),
+                        title: const Text('Usuários'),
+                        onTap: () => Navigator.of(context)
+                            .pushNamed('/cadastroUsuarios'),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.favorite),
+                        title: const Text('Favoritos'),
+                        onTap: () => null,
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.description),
+                        title: const Text('Consultas'),
+                        onTap: () => null,
+                      ),
+                      // const Divider(),
+                      const ListTile(),
+                      const ListTile(),
+                      ListTile(
+                        title: const Center(
+                          child: Text('Sair'),
+                        ),
+                        onTap: () => Navigator.of(context).pushNamed('/'),
+                      ),
+                    ],
+                  ),
                 ),
-                onTap: () => Navigator.of(context).pushNamed('/'),
               ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

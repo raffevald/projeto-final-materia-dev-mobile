@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projeto_final_materia_dev_mobile/models/user.dart';
 import 'package:projeto_final_materia_dev_mobile/views/widget/button.dart';
-import 'package:projeto_final_materia_dev_mobile/views/widget/dropdown_cadastro.dart';
-import 'package:projeto_final_materia_dev_mobile/views/widget/form_cadastro.dart';
+// import 'package:projeto_final_materia_dev_mobile/views/widget/dropdown_cadastro.dart';
+// import 'package:projeto_final_materia_dev_mobile/views/widget/form_cadastro.dart';
 
 //import '../ widget/siderbar.dart';
 
@@ -66,7 +66,7 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
 
       /*Formulário Cadastro*/
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,7 +126,7 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -151,25 +151,25 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                             obscureText: _isObscure,
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: Color.fromRGBO(211, 233, 254, 1),
+                              fillColor: const Color.fromRGBO(211, 233, 254, 1),
                               hintText: ('Digite uma senha*'),
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
                                   borderRadius: BorderRadius.circular(10)),
                               prefixIcon: const Icon(Icons.lock,
                                   color: Color.fromRGBO(112, 145, 221, 1)),
-                              suffixIcon: IconButton(
-                                  icon: Icon(
-                                    _isObscure =
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                    color: const Color.fromRGBO(112, 145, 221, 1),
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      _isObscure = !_isObscure;
-                                    });
-                                  }),
+                              // suffixIcon: IconButton(
+                              //     icon: Icon(
+                              //       _isObscure =
+                              //           ? Icons.visibility
+                              //           : Icons.visibility_off,
+                              //       color: const Color.fromRGBO(112, 145, 221, 1),
+                              //     ),
+                              //     onPressed: () {
+                              //       setState(() {
+                              //         _isObscure = !_isObscure;
+                              //       });
+                              //     },);
                             ),
                             /*Validação da senha*/
                             validator: (value) {
@@ -204,10 +204,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person,
+                            prefixIcon: const Icon(Icons.person,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -229,10 +229,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person,
+                            prefixIcon: const Icon(Icons.person,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -259,7 +259,8 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                                       fontWeight: FontWeight.w400),
                                   decoration: InputDecoration(
                                     filled: true,
-                                    fillColor: Color.fromRGBO(211, 233, 254, 1),
+                                    fillColor:
+                                        const Color.fromRGBO(211, 233, 254, 1),
                                     border: OutlineInputBorder(
                                         borderSide: BorderSide.none,
                                         borderRadius:
@@ -290,10 +291,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.place_rounded,
+                            prefixIcon: const Icon(Icons.place_rounded,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -315,10 +316,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.place_rounded,
+                            prefixIcon: const Icon(Icons.place_rounded,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -340,10 +341,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.place_rounded,
+                            prefixIcon: const Icon(Icons.place_rounded,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -365,10 +366,10 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                           style: GoogleFonts.inter(
                               fontSize: 18, fontWeight: FontWeight.w400),
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.phone,
+                            prefixIcon: const Icon(Icons.phone,
                                 color: Color.fromRGBO(112, 145, 221, 1)),
                             filled: true,
-                            fillColor: Color.fromRGBO(211, 233, 254, 1),
+                            fillColor: const Color.fromRGBO(211, 233, 254, 1),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10)),
@@ -379,16 +380,20 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                         Button(
                           onPressed: () {
                             final String nome = _controllerNome.text;
-                            final String emaiL =_controllerEmail.text;
+                            final String emaiL = _controllerEmail.text;
                             final String senha = _controllerSenha.text;
-                            final double? cpf = double.tryParse(_controllerCPF.text);
+                            final double? cpf =
+                                double.tryParse(_controllerCPF.text);
                             final String sexo = _controllerSexo.text;
                             final String endereco = _controllerEndereco.text;
-                            final int? numero = int.tryParse(_controllerNumero.text);
+                            final int? numero =
+                                int.tryParse(_controllerNumero.text);
                             final String bairro = _controllerBairro.text;
-                            final int? celular = int.tryParse(_controllerCelular.text);
+                            final int? celular =
+                                int.tryParse(_controllerCelular.text);
 
-                            final User usuarioNovo = User(nome, emaiL, senha, cpf, sexo, endereco, numero, bairro, celular);
+                            final User usuarioNovo = User(nome, emaiL, senha,
+                                cpf, sexo, endereco, numero, bairro, celular);
                             print(usuarioNovo);
                           },
                           text: 'Cadastrar',

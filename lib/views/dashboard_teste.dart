@@ -176,7 +176,6 @@ class _DashboardState extends State<Dashboard> {
                         color: const Color.fromARGB(255, 242, 246, 252),
                         elevation: 4,
                         margin: const EdgeInsets.symmetric(vertical: 10),
-
                         child: Container(
                           margin: const EdgeInsets.symmetric(horizontal: 10),
                           child: Column(
@@ -198,17 +197,6 @@ class _DashboardState extends State<Dashboard> {
                             ],
                           ),
                         ),
-                        //
-                        // child: ListTile(
-                        //   leading: Text(
-                        //     _foundUsers[index]["id"].toString(),
-                        //     style: const TextStyle(fontSize: 24),
-                        //   ),
-                        //   title: Text(_foundUsers[index]['name']),
-                        //   subtitle: Text(
-                        //       '${_foundUsers[index]["age"].toString()} years old'),
-                        // ),
-                        //
                       ),
                     )
                   : const Text(
@@ -234,6 +222,7 @@ class _DashboardState extends State<Dashboard> {
   }) =>
       InkWell(
         child: Container(
+          // padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
           padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -283,29 +272,30 @@ class _DashboardState extends State<Dashboard> {
                               ),
                             ),
                           ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Text(
-                                  rua,
-                                  style: const TextStyle(
-                                      fontSize: 12, color: Colors.black),
-                                ),
-                                Text(
-                                  numero,
-                                  style: GoogleFonts.inter(
-                                    textStyle: const TextStyle(
-                                      color: Color.fromARGB(255, 8, 8, 8),
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 15,
-                                    ),
+                          Row(
+                            children: [
+                              const Text("Rua/Av. "),
+                              Text(
+                                rua,
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.black),
+                              ),
+                              const Text(", Número "),
+                              Text(
+                                numero,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
                                   ),
-                                )
-                              ],
-                            ),
+                                ),
+                              )
+                            ],
                           ),
                           Row(
                             children: [
+                              const Text("Cidade "),
                               Text(
                                 cidade,
                                 style: GoogleFonts.inter(
@@ -316,6 +306,7 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                 ),
                               ),
+                              const Text(", Bairro "),
                               Text(
                                 bairro,
                                 style: GoogleFonts.inter(

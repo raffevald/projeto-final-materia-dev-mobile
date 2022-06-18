@@ -14,8 +14,6 @@ class SideBar extends StatelessWidget {
     return SizedBox(
       height: 650,
       child: Drawer(
-        // shape: BoxShape.circle(BoxBorder()),
-        // borderRadius: BorderRadius.circular(16.0),
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(),
@@ -26,28 +24,6 @@ class SideBar extends StatelessWidget {
             // Remove padding
             padding: EdgeInsets.zero,
             children: [
-              /*  UserAccountsDrawerHeader(
-            accountName: const Text('Dr. João Figuereido'),
-            accountEmail: const Text('joaofg@gmail.com'),
-            currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                child: Image.network(
-                  'https://oflutter.com/wp-content/uploads/2021/02/girl-profile.png',
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
-                ),
-              ),
-            ),
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 22, 23, 23),
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(
-                      'https://oflutter.com/wp-content/uploads/2021/02/profile-bg3.jpg')),
-            ),
-          ), */
-
               buildHeader(
                 urlImage: urlImage,
                 name: name,
@@ -77,7 +53,6 @@ class SideBar extends StatelessWidget {
                 title: const Center(
                   child: Text('Sair'),
                 ),
-                // leading: const Icon(Icons.exit_to_app),
                 onTap: () => Navigator.of(context).pushNamed('/'),
               ),
             ],
@@ -91,15 +66,12 @@ class SideBar extends StatelessWidget {
     required String urlImage,
     required String name,
     required String email,
-    // required VoidCallback onClicked,
   }) =>
       InkWell(
         // onTap: onClicked,
 
         child: Container(
           padding: padding.add(const EdgeInsets.symmetric(vertical: 40)),
-          // padding: Paddi,
-          //padding: Padding.add(const EdgeInsets.symmetric(vertical: 40)),
           child: Row(
             children: [
               CircleAvatar(radius: 27, backgroundImage: NetworkImage(urlImage)),
@@ -119,14 +91,6 @@ class SideBar extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              // const CircleAvatar(
-              //  radius: 20,
-              // backgroundColor: Color.fromARGB(30, 60, 168, 1),
-              // child: Icon(
-              //  Icons.logout,
-              //  color: Colors.blue,
-              // ),
-              // )
             ],
           ),
         ),

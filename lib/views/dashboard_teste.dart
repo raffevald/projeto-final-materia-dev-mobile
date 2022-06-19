@@ -224,6 +224,9 @@ class _DashboardState extends State<Dashboard> {
                                 name: _foundUsers[index]["name"].toString(),
                                 numero: _foundUsers[index]["numero"].toString(),
                                 rua: _foundUsers[index]["rua"].toString(),
+                                especialidade: _foundUsers[index]
+                                        ["especialidade"]
+                                    .toString(),
                               ),
                             ],
                           ),
@@ -250,6 +253,7 @@ class _DashboardState extends State<Dashboard> {
     required String numero,
     required String cidade,
     required String bairro,
+    required String especialidade,
   }) =>
       InkWell(
         child: Container(
@@ -282,15 +286,30 @@ class _DashboardState extends State<Dashboard> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            name,
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                color: Color.fromARGB(255, 8, 8, 8),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18,
+                          Row(
+                            children: [
+                              Text(
+                                name,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                  ),
+                                ),
                               ),
-                            ),
+                              const Text(" - "),
+                              Text(
+                                especialidade,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(height: 4),
                           Row(

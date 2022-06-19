@@ -107,7 +107,7 @@ Widget _Senha() {
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Informe sua senha!';
-              } 
+              }
               return null;
             }),
       ),
@@ -131,7 +131,7 @@ class MyLoginPageTest extends State<LoginPageTest> {
             ])),
         width: double.infinity,
         height: size.height,
-        padding: EdgeInsets.all(9.0),
+        padding: const EdgeInsets.all(9.0),
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
@@ -305,7 +305,9 @@ class MyLoginPageTest extends State<LoginPageTest> {
                         color: Color.fromRGBO(255, 255, 255, 1),
                       ),
                     ),
-                    const SizedBox(height: 22,),
+                    const SizedBox(
+                      height: 22,
+                    ),
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).pushNamed('/cadastro');

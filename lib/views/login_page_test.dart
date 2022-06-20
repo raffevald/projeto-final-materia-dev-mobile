@@ -15,7 +15,7 @@ class LoginPageTest extends StatefulWidget {
 String email = "";
 String senha = "";
 
-final _formKey = GlobalKey<FormState>();
+//final _formKey = GlobalKey<FormState>();
 
 Widget _Email() {
   return Column(
@@ -41,31 +41,37 @@ Widget _Email() {
                 BoxShadow(
                     color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
               ]),          
-          child: TextFormField(
-            //key: _formKey,
-            validator: (value){
-              if(value!.length < 5){
-                return "Esse e-mail é muito curto"; 
-              }else if(value.contains("@")){
-                return "E-mail incompleto";
-              }
-              return null;
-            },
-            onChanged: (text) => email = text, //retorna o texto  que ta escrito
-            keyboardType: TextInputType.emailAddress,
-            //alterando cor do texto inserido nos campos
-            cursorColor: Colors.black,
-            style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.w400),
-            decoration: const InputDecoration(
-                //mudar a cor do campo, e alterar as bordas
-                filled: true,
-                fillColor: Colors.white,
-                hintText: 'ex: localiza@gmail.com*',
-                hintStyle: TextStyle(color: Colors.grey),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  borderSide: BorderSide.none,
-                )),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget> [
+              TextFormField(
+                //key: _formKey,
+                validator: (value){
+                  if(value!.length < 5){
+                    return "Esse e-mail é muito curto"; 
+                  }else if(value.contains("@")){
+                    return "E-mail incompleto";
+                  }
+                  return null;
+                },
+                onChanged: (text) => email = text, //retorna o texto  que ta escrito
+                keyboardType: TextInputType.emailAddress,
+                //alterando cor do texto inserido nos campos
+                cursorColor: Colors.black,
+                style: GoogleFonts.inter(fontSize: 18, fontWeight: FontWeight.w400),
+                decoration: const InputDecoration(
+                    //mudar a cor do campo, e alterar as bordas
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'ex: localiza@gmail.com*',
+                    hintStyle: TextStyle(color: Colors.grey),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      borderSide: BorderSide.none,
+                    )),
+              ),
+            ],
           )),
     ],
   );
@@ -155,7 +161,7 @@ class MyLoginPageTest extends State<LoginPageTest> {
                   ),
                 ),
                 Container(
-                    key: _formKey,
+                    //key: _formKey,
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       //mainAxisAlignment: MainAxisAlignment.center,
@@ -169,32 +175,65 @@ class MyLoginPageTest extends State<LoginPageTest> {
                             fontSize: 40,
                             fontWeight: FontWeight.w900,
                             color: Color.fromRGBO(255, 255, 255, 1),
-                            //fontFamily: 'RobotoMono'
                           )),
                         ),
                         const SizedBox(
-                          //colocar espaçamento entre os campos
                           height: 39,
                         ),
                         _Email(),
                         _Senha(),
                         const SizedBox(
-                          //colocar espaçamento entre os campos
                           height: 25,
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width,
                           child: ElevatedButton(
                               onPressed: () {
-                                _Login();
-                                if (email == 'raff@gmail.com' && senha == '123456'
-                                || email == 'weslayne@gmail.com' && senha == '123456') {
+                                //_Login();
+                                if (email == 'localiza@gmail.com' && senha == '123456'
+                                || email == 'joaofg@gmail.com' && senha == '123456') {
                                   print('Login Correto');
                                   //Navigator.of(context).push( aqui aparece uma seta para voltar a tela de login no comando abaixo não
                                   Navigator.of(context).pushNamed(
                                       '/dashboard'); //esse '/home' é uma rota que vem do app_widget, se o login estiver correto, vai para outra tela
                                 } else {
                                   print('Login Incorreto');
+                                  showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: Text('Login incorreto',
+                                  textAlign: TextAlign.center,
+                                        style: GoogleFonts.inter(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w800,
+                                            color: Color.fromRGBO(0, 31, 84, 1)),),
+                                      content: Text(
+                                        'Tente novamente.',
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.inter(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color.fromRGBO(0, 31, 84, 1)),
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                            BorderRadius.circular(16)),
+                                      actions: [
+                                        FlatButton(
+                                          onPressed: () {
+                                            Navigator.of(context)
+                                                .pushNamed('/');
+                                          },
+                                          child: Text(
+                                            'Ok',
+                                            style: GoogleFonts.inter(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w800,
+                                                color: Color.fromARGB(255, 50, 110, 213)),
+                                          ),
+                                        ),
+                                      ],
+                                    ));
                                 }
                               },
                               style: ElevatedButton.styleFrom(
@@ -251,11 +290,11 @@ class MyLoginPageTest extends State<LoginPageTest> {
       ),
       ); 
   }
-  void _Login() async {
+  /*void _Login() async {
     if(_formKey.currentState!.validate()){ //
       print("Válido");
     }else{
       print("Inválido");
     }
-  }
+  }*/
 }

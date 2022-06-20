@@ -52,7 +52,7 @@ class _DashboardState extends State<Dashboard> {
   final List<Map<String, dynamic>> _allUsers = [
     {
       "cpf": "33344477733",
-      "dateTIme": "Quita 15 de agosto",
+      "dateTIme": "Quinta 15 de agosto",
       "urlImage": "./algumdiretorio/imagem.png",
       "name": "Dr. Rafael Silva",
       "email": "raff.evald@gmail.com",
@@ -65,7 +65,7 @@ class _DashboardState extends State<Dashboard> {
     },
     {
       "cpf": "33344477733",
-      "dateTIme": "Quita 15 de agosto",
+      "dateTIme": "Quinta 15 de agosto",
       "urlImage": "./algumdiretorio/imagem.png",
       "name": "Dr. Weslayne",
       "email": "weslayne@gmail.com",
@@ -82,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
       "urlImage": "./algumdiretorio/imagem.png",
       "name": "Dr. Eric Costa",
       "email": "eric.costa@gmail.com",
-      "especialidade": "Clinica geral",
+      "especialidade": "Clinico geral",
       "crmOrRqeOrRro": "234654",
       "rua": "Rio Branco",
       "numero": "1378",
@@ -231,7 +231,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     )
                   : const Text(
-                      'Nem um resultado encontrado.',
+                      'Nenhum resultado encontrado.',
                       style: TextStyle(fontSize: 24),
                     ),
             ),

@@ -263,7 +263,8 @@ class MyCadastroDeMedicos extends State<CadastroDeMedicos> {
                                       const Color.fromRGBO(232, 244, 255, 1),
                                   style: GoogleFonts.inter(
                                       fontSize: 18,
-                                      fontWeight: FontWeight.w400),
+                                      fontWeight: FontWeight.w400,
+                                      color: Color.fromRGBO(0, 31,84, 1)),
                                   decoration: InputDecoration(
                                     filled: true,
                                     fillColor:

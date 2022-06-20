@@ -395,6 +395,38 @@ class MyCadastroDeUsuarios extends State<CadastroDeUsuarios> {
                             final User usuarioNovo = User(nome, emaiL, senha,
                                 cpf, sexo, endereco, numero, bairro, celular);
                             print(usuarioNovo);
+                            showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                      content: Text(
+                                        'Cadastro realizado com sucesso! \nRealize seu login.',
+                                        textAlign: TextAlign.center,
+                                        style: GoogleFonts.inter(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color:
+                                                Color.fromRGBO(0, 31, 84, 1)),
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16)),
+                                      actions: [
+                                        FlatButton(
+                                          onPressed: () {
+                                            Navigator.of(context)
+                                                .pushNamed('/');
+                                          },
+                                          child: Text(
+                                            'Ok',
+                                            style: GoogleFonts.inter(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w800,
+                                                color: Color.fromARGB(
+                                                    255, 50, 110, 213)),
+                                          ),
+                                        ),
+                                      ],
+                                    ));
                           },
                           text: 'Cadastrar',
                         )

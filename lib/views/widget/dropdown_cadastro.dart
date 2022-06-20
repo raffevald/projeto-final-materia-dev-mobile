@@ -14,7 +14,7 @@ class Cadastro extends StatefulWidget {
 
 class MyCadastro extends State<Cadastro> {
   final dropValue = ValueNotifier('');
-  final dropOpc = ['Usuário', 'Médico', 'Administrador'];
+  final dropOpc = ['Usuário', 'Médico'];
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +42,11 @@ class MyCadastro extends State<Cadastro> {
                 Color.fromRGBO(19, 86, 202, 1),
               ]))),
         ),
-        body: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
+        body: SingleChildScrollView(
+          /*height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,*/
             padding: EdgeInsets.all(20.0),
+          //child: Container(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -112,12 +113,6 @@ class MyCadastro extends State<Cadastro> {
                                   Navigator.of(context)
                                       .pushNamed('/cadastroMedicos');
                                   break;
-                                /*case "Administrador" :
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => third()),
-                    );
-                    break;*/
                               }
                             },
                           ),
@@ -133,69 +128,13 @@ class MyCadastro extends State<Cadastro> {
                       height: size.height * 0.35,
                     ),
                   ),
-                ])));
+                ])
 
-    //child: ValueListenableBuilder(
-    //valueListenable: dropValue,
-    //builder: (BuildContext context, String value, _) {
-    //return SizedBox(
-    /*width: 280,
-              child: DropdownButtonFormField<String>(
-                isExpanded: true,
-                icon: const Icon(Icons.people),
-                hint: const Text('Escolha uma opção'),
-                dropdownColor: Color.fromRGBO(232, 244, 255, 1),
-                style: TextStyle(color: Color.fromRGBO(0, 31, 84, 1)),
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.blue, width: 2),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue, width: 2),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  filled: true,
-                  fillColor: Color.fromRGBO(232, 244, 255, 1),
-                ), 
-                value: (value.isEmpty) ? null : value,
-                items: _dropDownItem(),
-                onChanged: (value) {
-                  switch (value) {
-                    case "Usuário":
-                      Navigator.of(context).pushNamed('/cadastroUsuarios');
-                      break;
-                    case "Médico":
-                      Navigator.of(context).pushNamed('/cadastroMedicos');
-                      break;
-                    /*case "Administrador" :
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => third()),
-                    );
-                    break;*/
-                  }
-                }, 
-                /*value: (value.isEmpty) ? null : value,
-            onChanged: (escolha) => dropValue.value = escolha.toString(),
-            items: dropOpc
-                .map(
-                  (opcao) => DropdownMenuItem(
-                    value: opcao,
-                    child: Text(opcao),
-                  ),
-                )
-                .toList(),*/
-              ),
-            ); 
-          },
-        )
-        )
-        );*/
+        ),
+        );
   }
-
   List<DropdownMenuItem<String>> _dropDownItem() {
-    List<String> users = ["Usuário", "Médico", "Administrador"];
+    List<String> users = ["Usuário", "Médico"];
     return users
         .map((value) => DropdownMenuItem(
               value: value,

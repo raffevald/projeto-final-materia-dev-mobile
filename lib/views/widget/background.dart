@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 class BackgroundLogin extends StatelessWidget {
   const BackgroundLogin({Key? key,})
@@ -16,7 +16,6 @@ class BackgroundLogin extends StatelessWidget {
               fontSize: 40,
               fontWeight: FontWeight.bold,
               color: Color.fromRGBO(255, 255, 255, 1),
-              //fontFamily: 'RobotoMono'
             ),
           ),
         ]);
@@ -70,4 +69,4 @@ class BackgroundLogin extends StatelessWidget {
       ),
     );
   }
-}
+}*/

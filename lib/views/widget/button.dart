@@ -24,20 +24,6 @@ class Button extends StatelessWidget {
         style: buttonStyle,
         onPressed: onPressed,
         child: Text(text),
-        /*style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.all(20),
-          primary: Color.fromRGBO(0, 31, 84, 1),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0)), // Elevation
-        ),
-        child: Text('Cadastrar',
-            style: GoogleFonts.inter(
-              textStyle: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
-            )),*/
       ),
     );
   }

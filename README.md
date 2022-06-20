@@ -1,16 +1,19 @@
-# projeto_final_materia_dev_mobile
+<h1 align="center"> Projeto Aplicativo <br>LocalizaMed </h1>
 
-A new Flutter project.
+<p align="center">
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+</p>
 
-## Getting Started
+Aplicativo em desenvolvimento com o intuito de auxiliar a comunidade na localização de médicos em sua região.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+### 🛠 Tecnologias
+As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Flutter](https://flutter.dev/)
+- [Dart](https://dart.dev/)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🎨 Design
+Design dessa versão no Figma:
+
+- https://www.figma.com/file/QEm98V8KA7BZ8h0oUyNv4f/APP-FLUTTER-DEV.M%C3%93BILE?node-id=0%3A1

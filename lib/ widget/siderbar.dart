@@ -16,7 +16,7 @@ class SideBar extends StatelessWidget {
         children: <Widget>[
           const SizedBox(height: 80),
           Container(
-            color: Colors.transparent,
+            // color: Colors.transparent,
             child: SizedBox(
               height: 650,
               child: Drawer(

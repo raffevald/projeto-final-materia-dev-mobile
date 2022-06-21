@@ -224,6 +224,9 @@ class _DashboardState extends State<Dashboard> {
                                 name: _foundUsers[index]["name"].toString(),
                                 numero: _foundUsers[index]["numero"].toString(),
                                 rua: _foundUsers[index]["rua"].toString(),
+                                especialidade: _foundUsers[index]
+                                        ["especialidade"]
+                                    .toString(),
                               ),
                             ],
                           ),
@@ -250,11 +253,12 @@ class _DashboardState extends State<Dashboard> {
     required String numero,
     required String cidade,
     required String bairro,
+    required String especialidade,
   }) =>
       InkWell(
         child: Container(
           // padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
-          padding: padding.add(const EdgeInsets.symmetric(horizontal: 30)),
+          padding: padding.add(const EdgeInsets.symmetric(horizontal: 2)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -275,43 +279,95 @@ class _DashboardState extends State<Dashboard> {
                   child: Row(
                     children: [
                       CircleAvatar(
-                        radius: 35,
+                        radius: 40,
                         backgroundImage: NetworkImage(urlImage),
                       ),
-                      const SizedBox(width: 100),
+                      const SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            name,
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                color: Color.fromARGB(255, 8, 8, 8),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18,
+                          Row(
+                            children: [
+                              Text(
+                                name,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                  ),
+                                ),
                               ),
-                            ),
+                              const Text(" - "),
+                              Text(
+                                especialidade,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(height: 4),
-                          Text(
-                            crmOrRqeOrRro,
-                            style: GoogleFonts.inter(
-                              textStyle: const TextStyle(
-                                color: Color.fromARGB(255, 8, 8, 8),
-                                fontWeight: FontWeight.w400,
-                                fontSize: 18,
+                          Row(
+                            children: [
+                              Text(
+                                "CRM-RO ",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 18,
+                                  ),
+                                ),
                               ),
-                            ),
+                              Text(
+                                crmOrRqeOrRro,
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           Row(
                             children: [
-                              const Text("Rua/Av. "),
+                              Text(
+                                "Rua/Av. ",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
                               Text(
                                 rua,
-                                style: const TextStyle(
-                                    fontSize: 12, color: Colors.black),
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
                               ),
-                              const Text(", Número "),
+                              Text(
+                                ", Número ",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
                               Text(
                                 numero,
                                 style: GoogleFonts.inter(
@@ -326,7 +382,16 @@ class _DashboardState extends State<Dashboard> {
                           ),
                           Row(
                             children: [
-                              const Text("Cidade "),
+                              Text(
+                                "Cidade ",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
                               Text(
                                 cidade,
                                 style: GoogleFonts.inter(
@@ -337,7 +402,16 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                 ),
                               ),
-                              const Text(", Bairro "),
+                              Text(
+                                ", Bairro ",
+                                style: GoogleFonts.inter(
+                                  textStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 8, 8, 8),
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ),
                               Text(
                                 bairro,
                                 style: GoogleFonts.inter(
@@ -360,74 +434,4 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
       );
-
-  // Widget buildContextSearch({
-  //   required String dateTime,
-  //   required String urlImage,
-  //   required String name,
-  //   required String crmOrRqeOrRro,
-  //   required String rua,
-  //   required String numero,
-  //   required String cidade,
-  //   required String bairro,
-  // }) =>
-  //     InkWell(
-  //       child: Container(
-  //         padding: padding.add(const EdgeInsets.symmetric(vertical: 40)),
-  //         child: Row(
-  //           children: [
-  //             Text(
-  //               dateTime,
-  //               style: const TextStyle(fontSize: 15, color: Colors.black),
-  //             ),
-  //             SizedBox(
-  //               child: Row(
-  //                 children: [
-  //                   CircleAvatar(
-  //                       radius: 27, backgroundImage: NetworkImage(urlImage)),
-  //                   const SizedBox(width: 20),
-  //                   Column(
-  //                     crossAxisAlignment: CrossAxisAlignment.start,
-  //                     children: [
-  //                       Text(
-  //                         name,
-  //                         style: const TextStyle(
-  //                             fontSize: 15, color: Colors.black),
-  //                       ),
-  //                       const SizedBox(height: 4),
-  //                       Text(
-  //                         crmOrRqeOrRro,
-  //                         style: const TextStyle(
-  //                             fontSize: 11, color: Colors.black),
-  //                       ),
-  //                       Text(
-  //                         rua,
-  //                         style: const TextStyle(
-  //                             fontSize: 11, color: Colors.black),
-  //                       ),
-  //                       Text(
-  //                         numero,
-  //                         style: const TextStyle(
-  //                             fontSize: 11, color: Colors.black),
-  //                       ),
-  //                       Text(
-  //                         cidade,
-  //                         style: const TextStyle(
-  //                             fontSize: 11, color: Colors.black),
-  //                       ),
-  //                       Text(
-  //                         bairro,
-  //                         style: const TextStyle(
-  //                             fontSize: 11, color: Colors.black),
-  //                       )
-  //                     ],
-  //                   ),
-  //                 ],
-  //               ),
-  //             ),
-  //             const Spacer(),
-  //           ],
-  //         ),
-  //       ),
-  //     );
 }
